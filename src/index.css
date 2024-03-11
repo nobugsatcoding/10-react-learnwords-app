@@ -4,4 +4,6 @@ body {
   margin: 0;
   background: rgb(64, 62, 183);
   color: aliceblue;
+  background-image: url('./images/uk_flag.jpg');
+  background-size: cover;
 }
