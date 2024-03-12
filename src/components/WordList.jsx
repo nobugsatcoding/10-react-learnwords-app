@@ -6,28 +6,50 @@ export const WordList = () => {
   const [yesIcon, setYesIcon] = useState(wordslist.map(() => 'Yes'));
   const [noIcon, setNoIcon] = useState(wordslist.map(() => 'No'));
 
+  const [countLikeClick, setCountLikeClick] = useState(wordslist.map(() => 0));
+  const [countDislikeClick, setCountDislikeClick] = useState(
+    wordslist.map(() => 0),
+  );
+
   const [wordVisibility, setWordVisibility] = useState(
-    wordslist.map(() => ({yes:false, no:false})),
+    wordslist.map(() => ({ yes: false, no: false })),
   );
 
   const showYesIcon = (index) => {
     const updateVisibility = [...wordVisibility];
-    updateVisibility[index] = {...updateVisibility[index], yes: true};
+    updateVisibility[index] = { ...updateVisibility[index], yes: true };
     setWordVisibility(updateVisibility);
 
     const updatedYesIcons = [...yesIcon];
     updatedYesIcons[index] = <GrLike />;
     setYesIcon(updatedYesIcons);
+
+    const updatedCountLikeClick = [...countLikeClick];
+    updatedCountLikeClick[index]++;
+    setCountLikeClick(updatedCountLikeClick);
   };
 
   const showNoIcon = (index) => {
     const updateVisibility = [...wordVisibility];
-    updateVisibility[index] = {...updateVisibility[index], no: true};
+    updateVisibility[index] = { ...updateVisibility[index], no: true };
     setWordVisibility(updateVisibility);
 
     const updatedNoIcons = [...noIcon];
     updatedNoIcons[index] = <GrDislike />;
     setNoIcon(updatedNoIcons);
+
+    const updatedCountDislikeClick = [...countDislikeClick];
+    updatedCountDislikeClick[index]++;
+    setCountDislikeClick(updatedCountDislikeClick);
+  };
+
+  const countResult = (index) => {
+    const sumResult = countLikeClick[index] + countDislikeClick[index];
+    if (sumResult === 0) {
+      return "0%";
+    } else {
+      return `${((countLikeClick[index] / sumResult) * 100).toFixed(0)}%`;
+    }
   };
 
   return (
@@ -36,22 +58,34 @@ export const WordList = () => {
         <div className="enLtWord" key={word.id}>
           <div className="voteIcon">
             <div className="yes" onClick={() => showYesIcon(index)}>
-              {wordVisibility[index].yes ? <GrLike /> : yesIcon[index]}
+              {wordVisibility[index].yes ? (
+                <GrLike className="likeIcon" />
+              ) : (
+                yesIcon[index]
+              )}
             </div>
             <div className="no" onClick={() => showNoIcon(index)}>
-              {wordVisibility[index].no ? <GrDislike /> : noIcon[index]}
+              {wordVisibility[index].no ? (
+                <GrDislike className="disLikeIcon" />
+              ) : (
+                noIcon[index]
+              )}
             </div>
           </div>
           <div>
             <p>{word.eng}</p>
             <p
               style={{
-                visibility: wordVisibility[index].yes || wordVisibility[index].no ? 'visible' : 'hidden',
+                visibility:
+                  wordVisibility[index].yes || wordVisibility[index].no
+                    ? 'visible'
+                    : 'hidden',
               }}
             >
               {word.lt}
             </p>
           </div>
+          <div className="score">result:{countResult(index)} </div>
         </div>
       ))}
     </div>

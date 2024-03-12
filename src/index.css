@@ -6,4 +6,5 @@ body {
   color: aliceblue;
   background-image: url('./images/uk_flag.jpg');
   background-size: cover;
+  filter: contrast(150%);
 }
