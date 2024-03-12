@@ -7,12 +7,12 @@ export const WordList = () => {
   const [noIcon, setNoIcon] = useState(wordslist.map(() => 'No'));
 
   const [wordVisibility, setWordVisibility] = useState(
-    wordslist.map(() => false),
+    wordslist.map(() => ({yes:false, no:false})),
   );
 
   const showYesIcon = (index) => {
     const updateVisibility = [...wordVisibility];
-    updateVisibility[index] = true;
+    updateVisibility[index] = {...updateVisibility[index], yes: true};
     setWordVisibility(updateVisibility);
 
     const updatedYesIcons = [...yesIcon];
@@ -22,7 +22,7 @@ export const WordList = () => {
 
   const showNoIcon = (index) => {
     const updateVisibility = [...wordVisibility];
-    updateVisibility[index] = true;
+    updateVisibility[index] = {...updateVisibility[index], no: true};
     setWordVisibility(updateVisibility);
 
     const updatedNoIcons = [...noIcon];
@@ -36,17 +36,17 @@ export const WordList = () => {
         <div className="enLtWord" key={word.id}>
           <div className="voteIcon">
             <div className="yes" onClick={() => showYesIcon(index)}>
-              {wordVisibility[index] ? <GrLike /> : yesIcon[index]}
+              {wordVisibility[index].yes ? <GrLike /> : yesIcon[index]}
             </div>
             <div className="no" onClick={() => showNoIcon(index)}>
-              {wordVisibility[index] ? <GrDislike /> : noIcon[index]}
+              {wordVisibility[index].no ? <GrDislike /> : noIcon[index]}
             </div>
           </div>
           <div>
             <p>{word.eng}</p>
             <p
               style={{
-                visibility: wordVisibility[index] ? 'visible' : 'hidden',
+                visibility: wordVisibility[index].yes || wordVisibility[index].no ? 'visible' : 'hidden',
               }}
             >
               {word.lt}
