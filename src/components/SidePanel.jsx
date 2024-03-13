@@ -17,7 +17,7 @@ export const SidePanel = ({
       <div className="sidePanel">
         You have {totalWords}
         <br />
-        words in List
+        words in list
         <br />
         Your total
         <br />

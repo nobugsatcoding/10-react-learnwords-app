@@ -39,6 +39,20 @@ const wordslist = [
   { id: 38, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
   { id: 39, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
   { id: 40, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
+  { id: 41, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
+  { id: 42, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
+  { id: 43, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
+  { id: 44, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
+  { id: 45, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
+  { id: 46, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
+  { id: 47, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
+  { id: 48, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
+  { id: 49, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
+  { id: 50, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
+  { id: 51, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
+  { id: 52, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
+  { id: 53, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
+  { id: 54, eng: 'shall we go to the shop?', lt: 'ar mes eisime į parduotuvę' },
 ];
 
 export default wordslist

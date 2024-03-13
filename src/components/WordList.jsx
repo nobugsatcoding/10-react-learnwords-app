@@ -85,7 +85,7 @@ export const WordList = ({
               {word.lt}
             </p>
           </div>
-          <div className="score">result:{countResult(index)} </div>
+          <div className="score">result: {countResult(index)} </div>
         </div>
       ))}
     </div>
