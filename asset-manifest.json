@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/nobugsatcoding/10-react-learnwords-app/static/css/main.70988d9f.css",
+    "main.js": "/nobugsatcoding/10-react-learnwords-app/static/js/main.3da1a9e2.js",
+    "static/media/uk_flag.jpg": "/nobugsatcoding/10-react-learnwords-app/static/media/uk_flag.18e8ad56025ab40f851c.jpg",
+    "index.html": "/nobugsatcoding/10-react-learnwords-app/index.html",
+    "main.70988d9f.css.map": "/nobugsatcoding/10-react-learnwords-app/static/css/main.70988d9f.css.map",
+    "main.3da1a9e2.js.map": "/nobugsatcoding/10-react-learnwords-app/static/js/main.3da1a9e2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.70988d9f.css",
+    "static/js/main.3da1a9e2.js"
+  ]
+}
