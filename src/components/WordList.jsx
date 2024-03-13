@@ -7,7 +7,6 @@ export const WordList = ({
   setCountLikeClick,
   countDislikeClick,
   setCountDislikeClick,
-  totalWords,
 }) => {
   const [yesIcon, setYesIcon] = useState(wordslist.map(() => 'Yes'));
   const [noIcon, setNoIcon] = useState(wordslist.map(() => 'No'));
@@ -52,9 +51,6 @@ export const WordList = ({
       return `${((countLikeClick[index] / sumResult) * 100).toFixed(0)}%`;
     }
   };
-
-  const totalListScore =
-    countLikeClick.reduce((acc, curr) => acc + curr, 0) / totalWords;
 
   return (
     <div className="wordList">
