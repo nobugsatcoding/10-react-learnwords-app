@@ -2,14 +2,15 @@ import { useState } from 'react';
 import { GrLike, GrDislike } from 'react-icons/gr';
 import wordslist from '../data/wordslist';
 
-export const WordList = () => {
+export const WordList = ({
+  countLikeClick,
+  setCountLikeClick,
+  countDislikeClick,
+  setCountDislikeClick,
+  totalWords,
+}) => {
   const [yesIcon, setYesIcon] = useState(wordslist.map(() => 'Yes'));
   const [noIcon, setNoIcon] = useState(wordslist.map(() => 'No'));
-
-  const [countLikeClick, setCountLikeClick] = useState(wordslist.map(() => 0));
-  const [countDislikeClick, setCountDislikeClick] = useState(
-    wordslist.map(() => 0),
-  );
 
   const [wordVisibility, setWordVisibility] = useState(
     wordslist.map(() => ({ yes: false, no: false })),
@@ -46,11 +47,14 @@ export const WordList = () => {
   const countResult = (index) => {
     const sumResult = countLikeClick[index] + countDislikeClick[index];
     if (sumResult === 0) {
-      return "0%";
+      return '0%';
     } else {
       return `${((countLikeClick[index] / sumResult) * 100).toFixed(0)}%`;
     }
   };
+
+  const totalListScore =
+    countLikeClick.reduce((acc, curr) => acc + curr, 0) / totalWords;
 
   return (
     <div className="wordList">

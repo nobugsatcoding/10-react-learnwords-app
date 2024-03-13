@@ -1,16 +1,27 @@
-import wordslist from '../data/wordslist';
+export const SidePanel = ({
+  countLikeClick,
+  countDislikeClick,
+  totalWords,
+}) => {
+  const totalLikes = countLikeClick.reduce((acc, curr) => acc + curr, 0);
+  const totalDislikes = countDislikeClick.reduce((acc, curr) => acc + curr, 0);
+  const totalClicks = totalLikes + totalDislikes;
 
-export const SidePanel = () => {
+  const totalScorePercentage =
+    totalClicks > 0
+      ? `${((totalLikes / totalClicks) * 100).toFixed(0)}%`
+      : '0%';
+
   return (
     <div>
       <div className="sidePanel">
-        You have {wordslist.length}
+        You have {totalWords}
         <br />
         words in List
         <br />
-        Total score is
+        Your total
         <br />
-        80 %
+        score is {totalScorePercentage}
       </div>
     </div>
   );
