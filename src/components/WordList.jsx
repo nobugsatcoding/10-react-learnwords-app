@@ -52,6 +52,8 @@ export const WordList = ({
     }
   };
 
+
+
   return (
     <div className="wordList">
       {wordslist.map((word, index) => (
