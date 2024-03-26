@@ -14,6 +14,7 @@ export const WordList = ({
   const [wordVisibility, setWordVisibility] = useState(
     wordslist.map(() => ({ yes: false, no: false })),
   );
+  
 
   const showYesIcon = (index) => {
     const updateVisibility = [...wordVisibility];
@@ -49,10 +50,9 @@ export const WordList = ({
       return '0%';
     } else {
       return `${((countLikeClick[index] / sumResult) * 100).toFixed(0)}%`;
+
     }
   };
-
-
 
   return (
     <div className="wordList">
