@@ -12,6 +12,12 @@ export const SidePanel = ({
       ? `${((totalLikes / totalClicks) * 100).toFixed(0)}%`
       : '0%';
 
+      const handleClearMemory = () => {
+        localStorage.removeItem('countLikeClick');
+        localStorage.removeItem('countDislikeClick');
+    
+      };
+
   return (
     <div>
       <div className="sidePanel">
@@ -22,6 +28,7 @@ export const SidePanel = ({
         Your total
         <br />
         score is {totalScorePercentage}
+        <button className="clearButton" onClick={handleClearMemory}>Clear Memory</button>
       </div>
     </div>
   );
