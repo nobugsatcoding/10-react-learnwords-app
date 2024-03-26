@@ -1,4 +1,4 @@
-const wordslist = [
+const wordslistTest = [
   { id: 1, eng: 'in town', lt: 'mieste' },
   { id: 2, eng: 'where is?', lt: 'Kur yra?' },
   { id: 3, eng: 'hospital', lt: 'ligoninė' },
@@ -301,4 +301,4 @@ const wordslist = [
   { id: 300, eng: "close", lt: "arti" }
 ];
 
-export default wordslist
+export default wordslistTest

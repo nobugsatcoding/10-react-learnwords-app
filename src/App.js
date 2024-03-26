@@ -2,16 +2,16 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import { SidePanel } from './components/SidePanel';
 import { WordList } from './components/WordList';
-import wordslist from './data/wordslist';
+import wordslistTest from './data/wordslistTest';
 
 function App() {
   const [countLikeClick, setCountLikeClick] = useState(
     JSON.parse(localStorage.getItem('countLikeClick')) ||
-      wordslist.map(() => 0),
+      wordslistTest.map(() => 0),
   );
   const [countDislikeClick, setCountDislikeClick] = useState(
     JSON.parse(localStorage.getItem('countDislikeClick')) ||
-      wordslist.map(() => 0),
+      wordslistTest.map(() => 0),
   );
 
   useEffect(() => {
@@ -30,14 +30,14 @@ function App() {
       <SidePanel
         countLikeClick={countLikeClick}
         countDislikeClick={countDislikeClick}
-        totalWords={wordslist.length}
+        totalWords={wordslistTest.length}
       />
       <WordList
         countLikeClick={countLikeClick}
         setCountLikeClick={setCountLikeClick}
         countDislikeClick={countDislikeClick}
         setCountDislikeClick={setCountDislikeClick}
-        totalWords={wordslist.length}
+        totalWords={wordslistTest.length}
       />
     </div>
   );

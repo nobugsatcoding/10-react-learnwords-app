@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { GrLike, GrDislike } from 'react-icons/gr';
-import wordslist from '../data/wordslist';
+import wordslistTest from '../data/wordslistTest';
 
 export const WordList = ({
   countLikeClick,
@@ -8,11 +8,11 @@ export const WordList = ({
   countDislikeClick,
   setCountDislikeClick,
 }) => {
-  const [yesIcon, setYesIcon] = useState(wordslist.map(() => 'Yes'));
-  const [noIcon, setNoIcon] = useState(wordslist.map(() => 'No'));
+  const [yesIcon, setYesIcon] = useState(wordslistTest.map(() => 'Yes'));
+  const [noIcon, setNoIcon] = useState(wordslistTest.map(() => 'No'));
 
   const [wordVisibility, setWordVisibility] = useState(
-    wordslist.map(() => ({ yes: false, no: false })),
+    wordslistTest.map(() => ({ yes: false, no: false })),
   );
   
 
@@ -56,7 +56,7 @@ export const WordList = ({
 
   return (
     <div className="wordList">
-      {wordslist.map((word, index) => (
+      {wordslistTest.map((word, index) => (
         <div className="enLtWord" key={word.id}>
           <div className="voteIcon">
             <div className="yes" onClick={() => showYesIcon(index)}>
