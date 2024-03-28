@@ -19,6 +19,7 @@
   justify-content: center;
   text-align: center;
   text-shadow: 2px 2px #000, -2px 2px #000, 2px -2px #000000, -2px -2px #000;
+  
 }
 
 .clearButton {
@@ -50,21 +51,25 @@
 
 .yes,
 .no {
+  font-weight: 900;
   padding: 0 0.5rem;
   border-radius: 5px;
   transition: 0.2s ease-in-out;
+  text-shadow: 0 0 8px black;
 }
 
 .yes:hover {
   color: #008000;
   letter-spacing: 2px;
   background-color: #ffffff;
+  text-shadow: 0 0 2px black;
 }
 
 .no:hover {
   color: #ff0000;
   letter-spacing: 2px;
   background-color: #ffffff;
+  text-shadow: 0 0 2px black;
 }
 
 .wordList {
@@ -74,7 +79,7 @@
 }
 
 .enLtWord {
-  margin: 0.25rem 1rem 1rem;
+  margin: 0.25rem 1rem 3rem 1rem;
   border: 1px solid;
   border-radius: 0.35rem;
   background: rgba(96, 138, 97, 0.8);
@@ -97,6 +102,9 @@ p {
 }
 
 .score {
+  
   display: flex;
   justify-content: center;
+  margin-top: auto;
+  text-shadow: 0 0 5px black;
 }
